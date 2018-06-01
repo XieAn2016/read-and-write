@@ -1,0 +1,25 @@
+{
+    "extends": "eslint:recommended",
+    "env": {
+    	"browser": true
+    },
+    "globals": {
+    	"WebViewJavascriptBridge": true
+	},
+    "parserOptions": {
+        "ecmaVersion": 7,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true
+        }
+    },
+    "rules": {
+    	"semi": [2, "never"],//代码不允许有结尾分号
+    	"space-before-function-paren" : [2, "never"],//function<这里不许有空格>()
+    	"comma-dangle": [2, "never"],//对象字面量的最后一个属性值后面不允许带逗号
+    	"quotes": [2, "single"],//必须用单引
+    	"eqeqeq": 2,//必须用全等
+    	"no-console": 1,
+    	"no-unused-vars": 1
+    }
+}
