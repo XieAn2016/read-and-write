@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <code>
+        function test(x){
+            var sum = x;
+            var mod = function(y) {
+                sum = sum * y;
+                return mod;
+            };
+            mod.toString =function(){
+                return sum;
+            };
+            return mod;
+        }
+        console.log(test(2)(3)(4)(5));
+    </code>
+    <p>前面的一堆参数都是返回一个函数，最后一个参数计算完毕才返回一个值；使用tostring能巧妙地把前面的计算逻辑转化为一个字符串，然后赋值到下一轮的计算，所有参数计算完毕最后返回 mod就行</p>
+
+
+
+    <br/>
+
+    <code>
+        function multi(a) {
+            return function(b) {
+                return function(c) {
+                    return a * b * c;
+                }
+            }
+        }
+    </code>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3>Webpack 相关</h3>
+<p>中文文档
+
+    https://webpack.docschina.org/concepts/
+    
+    英文文档
+    
+    https://webpack.js.org/concepts/
+    
+    常用loader
+    
+    1. 加载文件
+    
+    raw-loader：将文本文件的内容加载到代码中。
+    
+    file-loader：将文件输出到一个文件夹中，在代码中通过相对URL去引用输出的文件。
+    
+    url-loader：和file-loader类似，但是能在文件很小的情况下以base64方式将文件的内容注入代码中。
+    
+    source-map-loader：加载额外的SourceMap文件，以方便断点调试。
+    
+    svg-inline-loader：将压缩后的svg内容注入代码中。
+    
+    node-loader：加载node.js原生模块的.node文件。
+    
+    image-loader：加载并且压缩图片文件。
+    
+    json-loader：加载json文件。
+    
+    yaml-loader：加载yaml文件。
+    
+    2.编译模版
+    
+    pug-loader：将Pug模版转换成JavaScript函数并返回。
+    
+    handlebars-loader：将Handlebars模版编译成函数并返回。
+    
+    ejs-loader：将EJS模版编程成函数并返回。
+    
+    haml-loader：将HAML代码转换成HTML。
+    
+    markdown-loader：将Markdown文件转换成HTML。
+    
+    3.转换脚本语言
+    
+    babel-loader：将ES6转换成ES5。
+    
+    ts-loader：将TypeScript转换成JavaScript。
+    
+    awesome-typescript-loader：将TypeScript转换成JavaScript，性能要比ts-loader。
+    
+    coffee-loader：将CoffeeScript转换成JavaScript。
+    
+    4.转换样式文件
+    
+    css-loader：加载css，支持模块化，压缩，文件导入等特性。
+    
+    style-loader：将css代码注入JaveScript中，通过DOM操作加载CSS。
+    
+    sass-loader：将SCSS/SASS代码转换成CSS。
+    
+    postcss-loader：扩展CSS语法，使用下一代CSS。
+    
+    less-loader：将Less代码转换成CSS代码。
+    
+    stylus-loader：将Stylus代码转换成CSS代码。
+    
+    5.检查代码
+    
+    eslint-loader：通过ESLint检查JavaScript代码。
+    
+    tslint-loader：通过TSLint检查TypeScript代码。
+    
+    mocha-loader：加载Mocha测试用例的代码。
+    
+    coverjs-loader：计算测试的覆盖率。
+    
+    6.其他Loader
+    
+    vue-loader：加载Vue.js单文件组件。
+    
+    il8n-loader：加载多语言版本，支持国际化。
+    
+    ignore-loader：忽略部分文件。
+    
+    ui-component-loader：按需加载UI组件库，例如在使用antdUI组件库时，不会因为只用到了Button组件而打包进所有的组件。
+    
+    常用的Plugin
+    
+    1.用于修改行为
+    
+    define-plugin：定义环境变量。
+    
+    context-replacement-plugin：修改require语句在寻找文件时的默认行为。
+    
+    ignore-plugin：用于或略部分文件。
+    
+    2.用于优化
+    
+    commons-chunk-plugin：提取公共代码。
+    
+    extract-text-webpack-plugin：提取JaveScript中的CSS代码到单独的文件中。
+    
+    prepack-webpack-plugin：通过Facebook的Prepack优化输出的JavaScript代码的性能。
+    
+    uglifyjs-webpack-plugin：通过UglifyES压缩ES6代码压缩，提升构建的速度。
+    
+    webpack-parallel-uglify-plugin：多进程执行UglifyJS代码压缩，提升构建的速度。
+    
+    imagemin-webpack-plugin：压缩图片文件。
+    
+    webpack-spritesmith：用插件制作雪碧图。
+    
+    ModuleConcatenationPlugin：开启WebpackScopeHoisting功能。
+    
+    dll-plugin：借鉴DDL的思想大幅度提升构建速度。
+    
+    hot-module-replacement-plugin：开启模块热替换功能。
+    
+    3.其他Plugin
+    
+    serviceworker-webpack-plugin：为网页应用增加离线缓存功能。
+    
+    stylelint-webpack-plugin：将stylelint集成到项目中。
+    
+    il8n-webpack-plugin：使网页支持国际化。
+    
+    provide-plugin：从环境中提供的全局变量中加载模块，而不用导入对应的文件。
+    
+    web-webpack-plugin：可方便地为单页应用输出HTML，比html-webpack-plugin好用。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
