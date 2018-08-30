@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>添加字体</title>
+    <style>
+        @font-face {
+            font-family:iconfont;src:url(/static/mobile/font/frozen/iconfont-full.ttf?20170523) format("truetype")
+        }
+        .ui-icon,[class^=ui-icon-] {
+            font-family: iconfont!important;
+            font-size: 32px;
+            line-height: 44px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: .2px;
+            display: block;
+            color: rgba(0,0,0,.5)
+        }
+        .ui-icon-video:before { 
+            content: "\e684"; 
+        }
+    </style>
+</head>
+<body>
+
+    <P>1、iconfont选择需要的图标添加购物车，加入frozen_dinding_sass，下载至本地，解压后文件夹</P>
+    <P>2、将解压后文件夹的iconfont.ttf复制出iconfont-full.ttf，把字体文件放到/static/mobile/font/frozen/目录</P>
+    <P>3、将解压后文件夹的iconfont.css中对应添加的字体图标类名例如<code>.icon-video:before { content: "\e684"; }</code>修改成<code>.ui-icon-video:before { content: "\e684"; }</code></P>
+    <P>4、在业务代码例如app.css中添加下面类名
+        <code>
+            @font-face {
+                font-family:iconfont;src:url(/static/mobile/font/frozen/iconfont-full.ttf?20170523) format("truetype")
+            }
+            .ui-icon,[class^=ui-icon-] {
+                font-family: iconfont!important;
+                font-size: 32px;
+                line-height: 44px;
+                font-style: normal;
+                -webkit-font-smoothing: antialiased;
+                -webkit-text-stroke-width: .2px;
+                display: block;
+                color: rgba(0,0,0,.5)
+            }
+            .ui-icon-video:before { 
+                content: "\e684"; 
+            }
+        </code>
+    </P>
+    <P>5、在html中使用标签加对应类名<code><i class="ui-icon-video"></i></code></P>
+    <p>注意：在前端react项目中，开发过程中字体图标位于public目录，打包后css引用的字体图标地址使用webroot中地址</p>
+</body>
+</html>
